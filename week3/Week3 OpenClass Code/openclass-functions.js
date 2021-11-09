@@ -80,3 +80,33 @@ function stringFind(array, string) {
 }
 }
 console.log(stringFind('blue'))
+
+//Create a function named checkout that accepts 2 variables named 
+//cardBalance and price. If the price is more than the card balance,
+//return false. Otherwise, return the new card balance.
+
+function checkout(cardBalance, price) {
+    if (price > cardBalance) {
+    return false;
+    
+    } else {
+        cardBalance -= price;
+        return cardBalance;
+}}
+console.log(checkout(500, 400, 60));
+
+//Write a function called sumOfTwo that takes two numbers as parameters
+//and returns the sum.
+
+function sumOfTwo(num1, num2) {
+    return num1 + num2;
+}
+console.log(sumOfTwo(3));
+
+//Create a function named returnSum that accepts 3 integer variables named
+//num1, num2, and num3. Return the sum of the three variables.
+
+function returnSum(num1, num2, num3) {
+    return num1 + num2 + num3;
+}
+console.log(returnSum(67, 43, 92));
