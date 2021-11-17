@@ -13,8 +13,6 @@
 
 // The array of customer objects will have the following schema:
 
-// The array of customer objects will have the following schema:
-
 const customers = [
     {
         name: 'Sam',
@@ -40,18 +38,28 @@ const customers = [
     age: 45
 },
 {
-    name: 'Cottage',
+    name: 'David',
     address: {
         street: '1234 W Bell Rd',
-        city: 'Peoria',
         zip: '85308',
-        state: 'AZ'
+        state: 'NV'
     },
-    membershipLevel: 'PLATINUM',
+    membershipLevel: 'SILVER',
     age: 32
 },
 {
-    name: 'Cdog',
+    name: 'David',
+    address: {
+        street: '1234 W Bell Rd',
+        city: "New Brunswick",
+        zip: '85308',
+        state: 'NV'
+    },
+    membershipLevel: 'SILVER',
+    age: 32
+},
+{
+    name: 'cdog',
     address: {
         street: '1234 W Bell Rd',
         city: 'Peoria',
@@ -62,40 +70,32 @@ const customers = [
     age: 26
 }
 ];
-//more customers with the same schema
-
-
+//more customers with the same schema *added**
 // Note: The solution to this problem does not require the use of callbacks. 
+
+
+var buysMostSocks = [];
 function buySocks(customer) {
+
     for(i = 0; i < customer.length; i++) {
-        console.log("in function");
-        if (customer.name.startsWith('C')) {
-            return true;
-        }
-    if (city == 'Peoria') {
-        return console.log('true');
-    
+
+        if ((customer[i].name[0].toUpperCase === 'C')
+        || (customer[i].address.city === 'Peoria')
+        || (customer[i].address.street && customer[i].address.city && customer[i].address.zip && customer[i].address.state)
+        || ((customer[i].membershipLevel === 'GOLD')
+        || (customer[i].membershipLevel === 'PLATINUM')
+        || (customer[i].membershipLevel === 'SILVER' && customer[i].age < 29))
+        ) 
+       buysMostSocks.push(customer[i]);
     }
 
+    return buysMostSocks;
 }
+
 buySocks(customers);
-}
-// let whoBuysMostSocks = customers.filter({
-//     name.startsWith === "C" ||
-//     address.street === !undefined ||
-//     city == 'Peoria' ||
-//     state == 'AZ' ||
-//     membershipLevel == 'GOLD' || 'PLATINUM' ||
-//     membershipLevel === 'SILVER' && age < 29
-//     }
-//     )
+console.log(customers);
+console.log(buysMostSocks);
 
-//     console.log(whoBuysMostSocks);
+/* it works!!! */
 
-// customers.filter = [];
-// filter['name'] = startsWith ['C'];
-// filter['address'] = [!undefined];
-// filter['city'] = ['Peoria'];
-// filter['state'] = ['AZ'];
-// filter(['membership level'] == ['GOLD' || 'PLATINUM'] || [age] < 29 && ['membership level'] == 'SILVER')
 
