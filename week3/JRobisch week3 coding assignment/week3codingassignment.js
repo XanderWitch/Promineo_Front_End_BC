@@ -16,12 +16,24 @@ let difference = ages[ages.length - 1] - ages[0];
 
 console.log("The difference between the last element and the first element of the ages array is " + difference + ".");
 
+//alternate coding from Evan; make this a function
+
+function diffBetweenFirstAndLast(array) {
+    let last = array[array.length - 1];
+    let first = array[0];
+    let diff = last - first;
+    return diff;
+}
+
+console.log("The difference between the first element and the last element is " + diffBetweenFirstAndLast(ages));
+
 //1b. Add a new age to your array and repeat the step above to ensure it is dynamic.
 
 //I'll use the push method to add a number to the end of the array before repeating the above steps to check that it still works.
 
 ages.push(112);
 
+console.log("The difference between the first element and the last element is now " + diffBetweenFirstAndLast(ages));
 difference = ages[ages.length - 1] - ages[0];
 console.log("The difference between the last element and the first element of the ages array is now " + difference + ".");
 
@@ -48,7 +60,7 @@ console.log("The average value of the elements in the ages array is " + agesAver
 //2. Create an array called names that contains the following values: ‘Sam’, ‘Tommy’, ‘Tim’, ‘Sally’, ‘Buck’, ‘Bob’.
 //First, I'll declare the array as instructed.
 
-let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
+const names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
 
 //2a. Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
 //Next, I'll declare the sum varialbe for the names array.
@@ -87,9 +99,10 @@ console.log(allNames);
 //5. Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
 //The map method is useful here because it loops through an existing array to create a new array consisting of the returned values.
 
-let nameLengths = names.map(function(element) {
+const nameLengths = names.map(function(element) {
     return element.length;
 })
+
 
 
 //6. Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.

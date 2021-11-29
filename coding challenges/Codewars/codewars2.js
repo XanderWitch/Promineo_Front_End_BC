@@ -45,40 +45,48 @@ console.log(isSquare(10));
 //you will take you exactly ten minutes (you don't want to be early
 //or late!) and will, of course, return you to your starting point.
 //Return false otherwise.
-var north = 0;
-var south = 0;
-var east = 0;
-var west = 0;
+
+var testArray = (['n','s','n','s','n','s','n','s','n','s']);
+console.log(testArray);
 
 function isValidWalk(walk) {
-  console.log(walk.length);
-  for(i = 0; i < walk.length; i++) { //only looping through once. what's wrong?
-    console.log(walk[i]);
-    if (walk[i] === walk[i+1]) {
-      return false;
-    }
-    if (walk[i] = 'n') {
-      north++;
-      console.log(north);
-    } else if (walk[i] = 's') { 
-        south++;
-        console.log(south);
-    } else if (walk[i] = 'e') {
-      east++;
-      console.log(east);
+  //insert brilliant code here
+  //first check that the walk length is exactly 10 b/c 10 blocks = 10 minutes
+  if (walk.length !=10) {
+    return false;
+  }
+  //we need to confirm that there are an equal number of 'n' to 's' and 'e' to 'w'
+  //so you end up in the same spot. So, we need to loop through the code to count each.
+  
+  //first declare n, s, e, w as variables
+  let n = 0;
+  let s = 0;
+  let e = 0;
+  let w = 0;
+
+  //next, create a for loop to run through the array and add up the amounts of each direction
+    for (let i = 0; i < walk.length; i++) {
+    if (walk[i] === 'n') {
+      n++;
+    } else if (walk[i] === 's') {
+      s++;
+    } else if (walk[i] === 'e') {
+      e++;
     } else {
-     west++;
-     console.log(west);
+      w++;
     }
-    if (west !== east) {
-      return false;
     }
-    if (north !== south) {
-      return false;
-    }
+    console.log(n, s, e, w);
+  //now, lets's make sure that the n-s and e-w are equal
+  if (n != s) {
+    return false;
+  } else if (e != w) {
+    return false;
+  } else {
+    return true;
   }
-    return walk.length === 10;
-  }
+}
 
+console.log(isValidWalk(testArray))
+  
 
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
