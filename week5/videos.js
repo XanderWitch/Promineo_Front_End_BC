@@ -58,3 +58,101 @@ student3.introduce();
 
 
 /* INHERITANCE */
+
+//Similar classes with duplicate code? Make shared code into parent class and have each class inherit from that parent class
+
+//Example: Promotion Sender and Collection sender both have to send a notification and find users with a specific status
+
+//Add parent class
+class NotificationSender {
+    constructor(status) {
+        this.status = status;
+    }
+    sendNotification(notification) {
+        console.log('Sending: ' + notification);
+    }
+    findUsersWithStatus(status) {
+        let users = getUsers(status);
+        return users;
+    }
+}
+
+class PromotionSender extends NotificationSender { //add 'extends' keyword to connect to parent class, used to inerhit from another class
+    constructor(status) {
+        super(status); //'super' keyword is a method that refers to the parent class and when followed by parentheses refers to the parent class constructor, like the 'this' keyword but referring to the specific instance of the parent class that is being inherited from
+
+        //you must always call the parent's constructor in a class that extends another class
+    }
+    // sendNotification(notification) {
+    //     console.log('Sending: ' + notification);
+    // }
+
+    // findUsersWithStatus(status) {
+    //     let users = getUsers(status);
+    //     return users;
+    // }
+
+//using parent class, put common code in parent class; that way, changes only have to be made in one place
+
+    calculateDiscount(status) {
+        if (status === 'GOLD') {
+            return .3;
+        } else if (status === 'SILVER') {
+            return .15;
+        }
+        return 0;
+    }
+}
+
+class CollectionsSender extends NotificationSender {
+    constructor(status) {
+        super(status);
+    }
+    // sendNotification(notification) {
+    //     console.log('Sending: ' + notification);
+    // }
+    // findUsersWithStatus(status) {
+    //     let users = getUsers(status);
+    //     return users;
+    // }
+    calculateFee (status) {
+        if (status === 'OVERDUE') {
+            return 10;
+        } else if (status === 'DELINQUENT') {
+            return 25;
+        }
+        return 5;
+    }
+}
+
+//example: create an instance from CollectionSender
+let collectionsSender = new CollectionsSender('OVERDUE');
+collectionsSender.sendNotification('this is a test collections notification.')
+
+
+/* HANDLING EXCEPTIONS */
+
+//Sometimes, codes results in errors outside the control of your code. We can use try-catch blocks to handle any exceptions that might be thrown. Exception = error, exception to what should be happening. Wrap code that might encounter an error in a TRY block; then, following the try block have a CATCH block that defines what will happen if exceptions occur in that try block.
+
+// list.push('hello') //error is thrown here because we're trying to push to an array that doesn't exist. programs stops here.
+// console.log('goodbye'); //so, 'goodbye' is never printed to the console.
+
+//ALTERNATIVELY:
+
+try {
+    list.push('hello');
+} catch (err) {
+    console.log(err);    
+}
+console.log('goodbye'); //in this instance, error is logged out "ReferenceError: list is not defined ..." but program continues and 'goodbye' is logged to the console. The exception was HANDLED, and the program keeps running.
+
+//we can also add a FINALLY block after try or catch; the code inside this block will run whether an exception is thrown or not.
+
+//NOTE: try-catch blocks are designed to surround only code that are designed well but may run into problems outside our control, such as through the use of someone else's libraries or networking exceptions
+
+
+
+
+
+
+
