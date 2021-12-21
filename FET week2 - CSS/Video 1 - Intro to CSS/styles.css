@@ -1,0 +1,23 @@
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: navy;
+    font-size: 24px;
+}
+h3 {
+    color: navy;
+    font-size: 18px;
+}
+div {
+    background-color: lightgray;
+    border-style: solid;
+    border-color: block;
+    border-radius: 5px;
+}
+.shadow-text {
+    text-shadow: gray 1px 1px;
+}
+#large-paragraph {
+    font-size: 16px;
+}

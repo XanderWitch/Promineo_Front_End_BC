@@ -1,0 +1,1 @@
+alert("We're linked to JavaScript!");

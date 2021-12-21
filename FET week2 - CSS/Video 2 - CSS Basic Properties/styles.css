@@ -1,0 +1,11 @@
+#example {
+    color: purple;
+    font-size: 1.5em;
+    background-color: lightcyan;
+    border-style: dotted;
+    border-width: 3px;
+    border-color: purple;
+    border-radius: 5px;
+    height: 200px;
+    text-align: center;
+}

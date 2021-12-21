@@ -1,0 +1,145 @@
+<!--
+HTML Core Structure
+
+HTML organizes content with structures called "elements." Elements are the basic building blocks of html, and they allow us to structure and describe how to display content. An HTML element consists of tags (e.g. html, head, body, p, title, h1-h6), usually an opening and a closing tag, although some elements only have one tag.
+
+Elements can be described using attributes inside the HTML elements.
+-->
+
+<!-- Text Elements
+Common elements: headings, paragraphs, and formatting elements.
+-->
+
+<!-- Anchors and Images
+
+Two ways to point to a Location:
+1. With its absolute path (exact location or URL).
+2. With its relative path (location relative to where we start, on our server).
+
+Images work the same way.
+-->
+
+<!-- Lists and Tables & Their Elements
+1. Ordered List: Numbered
+2. Unordered List: Usually Bulleted
+
+Tables are more complex. See below for basic structure.
+-->
+
+<!--Inline vs. Block
+Elements that help us structure and group content and other elements together.
+    BLOCK - takes up entire width of its parent (e.g. the screen).
+    INLINE - multiple items can fit on the same line
+
+Tools to group content content and other elements together
+    DIV - Block-level element element (takes up width of parent)
+    SPAN - Inline-level element (multiple SPANS can fit on the same line)
+-->
+
+<!--Linking Javascript to HTML
+Link JS files to HTML with script tag.
+-->
+
+<!--Forms
+Allow users to input information. Use elements such as buttons.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Bootcamp HTML Page</title>
+    
+        <!--Adding JS to HTML-->
+        <script src="index.js"></script>
+
+    </head>
+    <body class="container">
+        <h1>This is a 1 head.</h1>
+        <p>Hello World! This is the oldest text ever.</p>
+        <h3>3 head</h3>
+        <h6>6 head</h6>
+
+        <!-- Here is a comment. Below are some different styling elements.-->
+        <p>Regular text, <b>bold text,</b> <i>italic text,</i>, <sup>superscript text.</sup></p>
+
+        <!--Linked with an absolute path.-->
+        <a href="https://google.com">Google is here.</a><br> <!--"<br>"" is a self-closing line break tag.-->
+
+        <!--Linked with a relative path.-->
+        <a href="page2.html">Page 2 is here.</a><br>
+
+        <!--Linked with a relative path inside a subfolder.-->
+        <a href="pages/page3.html">Page 3 is here.</a><br><br>
+
+        <!--You can link images with absolute or relative paths as well.-->
+        <img src="cutecat.jpg"> <!--"<img>" is also a self-closing tag.--><br><br>
+
+        <!--Image linked with an absolute path-->
+        <img src="https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s800-c85.webp">
+
+        <!--Ordered List-->
+        <ol><!--"<ol>" goes on the outside of the ordered lists.-->
+            <li>First List Item</li><!--Each item in the ordered list is surrounded by "<li>" tags.-->
+            <li>Second List Item</li>
+            <li>Third List Item</li>
+        </ol>
+
+        <!--Unordered List-->
+        <ul><!--"<ul>" goes on the outside of the unordered lists.-->
+            <li>First List Item</li><!--Each item in the ordered list is surrounded by "<li>" tags.-->
+            <li>Second List Item</li>
+            <li>Third List Item</li>
+        </ul>
+
+        <!--Tables-->
+        <table> <!--start with table tag-->
+            <tr><!--table row-->
+              <th><!--table headers-->
+                Header1
+              </th>
+              <th>Header 2</th>
+              <th>Header 3</th>
+            </tr>
+            <tr>
+                <td><!--table data-->
+                Data1</td>
+                <td>Data2</td>
+                <td>Data3</td>
+            </tr>
+            <tr>
+                <td>
+                Data4</td>
+                <td>Data5</td>
+                <td>Data6</td>
+            </tr>
+        </table>
+
+    <!--Div example-->
+    <div><!--anything inside here is like its inside an invisible box and all grouped together-->
+        <h1>Div1</h1>
+        <p>Div1 paragraph.</p>
+            <div>
+                <h2>Nested Div</h2>
+            </div>      
+    </div>
+    <div>
+        <h1>Div2</h1>
+        <p>Div2 paragraph. <span>span text.</span> Non-span text.</p>
+    </div>
+
+    <!--Forms-->
+        <form>
+            <input type="text" name="firstName" placeholder="First Name"><br>
+            <input type="text" name="lastName" placeholder="Last Name"><br><br>
+            <p>Ice Cream Preference</p>
+            <input type="radio" name="ice-cream" value="Chocolate">Chocolate<br><!-- can only select one with radio buttons-->
+            <input type="radio" name="ice-cream" value="Peanut Butter">Peanut Butter<br>
+            <input type="radio" name="ice-cream" value="Swirl (Reese's)">Swirl (Reese's)<br>
+            <input type="submit" value="Submit"><!--Submit button--><br>
+            
+            <button>Click me!</button><!--A button currently without a function-->
+        </form>
+    </body>
+</html>
+
+

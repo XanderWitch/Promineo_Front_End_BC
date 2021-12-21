@@ -1,0 +1,21 @@
+.every-even li:nth-child(even) {
+    background-color: magenta;
+}
+
+.every-third li:nth-child(3n) {
+    background-color: lime;
+}
+
+img {
+    float: right;
+    width:30%;
+}
+
+.hov {
+    height: 200px;
+    width: 200px;
+    background-color: lightpink;
+}
+.hov:hover {
+    background-color: lightseagreen;
+}
