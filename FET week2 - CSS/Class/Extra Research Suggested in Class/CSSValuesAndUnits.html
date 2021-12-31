@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Values and Units</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+ 
+    <h1>CSS Values and Units (notes from MDN Web Docs)</h1>
+    <p>A <span class="bold">CSS Value (value type = data type)</span> defines the set of values that are allowed for a property in CSS. They are usually distinguished from properties by angle brackets (e.g., color property vs. &lt;color&gt; data type).</p>
+    <h2>Some Numeric Data Types</h2>
+    <ol>
+        <li><span class="bold">&lt;integer&gt;</span> - whole number.</li>
+        <li><span class="bold">&lt;number&gt;</span> - decimal number that may or may not have a decimal point.</li>
+        <li><span class="bold">&lt;dimension&gt;</span> - a number with a unit attached to it (e.g., 90deg, 10px). This category includes the &lt;length&gt;, &lt;angle&gt;, &lt;time&gt;, and &lt;resolution&gt; types.</li>
+        <li><span class="bold">&lt;percentage&gt;</span> - a fraction of some other value (e.g., 50%, or an element's link relative to its parent's link).</li>
+    </ol>
+    <h2>Lengths</h2>
+    <h3>Absolute Length Units</h3>
+    <p>Includes units not relative to anything else; always the same size. Examples:</p>
+    <ul>
+        <li>cm</li>
+        <li>mm</li>
+        <li>Q (quarter millimeters)</li>
+        <li>pc (picas)</li>
+        <li>pt (points)</li>
+        <li>px</li>
+    </ul>
+    <h3>Relative Length Units</h3>
+    <p>Relative to something else (e.g., size of the parent element's font, size of viewport). Good for scaling and responsive development. Examples:</p>
+    <ul>
+        <li>em (font size of the parent or font size of the element itself in properties like width)</li>
+        <li>ex (x-height of the element's font)</li>
+        <li>ch (advance measure [width] of the glyph "0" of the element's font)</li>
+        <li>rem (font size of the root element)</li>
+        <li>lh (line height of the element)</li>
+        <li>vw (1% of the viewport's width)</li>
+        <li>vh (1% of the viewport's height)</li>
+        <li>vmin (1% of the viewport's smaller dimension)</li>
+        <li>vmax (1% of the viewport's larger dimension)</li>
+    </ul>
+    <h2>Percentages</h2>
+    <p>Often treated the same way as a length. Always relative to another value. With font size, it will be relative to the font size of the element's parent. For width, it will be a percentage of the width of the parent.</p>
+    <h2>Numbers</h2>
+    <p>Some value types dont need units. For example, <span class="bold">opacity</span> takes values from 0 (fully transparent) to 1 (fully opaque).</p>
+    <h2>Color</h2>
+    <p>Common methods of specifying color with good browser support.</p>
+    <h3>Color Keywords</h3>
+    <p>Examples:</p>
+    <ul>
+        <li color=>aqua/cyan (same)</li>
+        <li color="magenta">fuscshia/magenta</li>
+        <li color="blue">blue</li>
+        <li color="black">black</li>
+        <li color="lightgrey">lightgrey/lightgray</li>
+    </ul>
+    <h3>Hex RGB Values</h3>
+    <p>Use hexadecimal code (has followed by six digits). Examples:</p>
+    <ul>
+        <li>#000000 - Black</li>
+        <li>#CC8899 - Purple</li>
+        <li>#ffffff - White</li>
+    </ul>   
+    <h3>RGB and RGBA Values</h3>
+    <p>RGB represents  color with three values: red, green, and blue (e.g., rgb(2, 121, 139) or rgb(197, 93, 161)).</p>
+    <p>RGBA colors work the same with the addition of a fourth dimension, an alpha channel with gives transparency (from 0 to 1). For example: rgba(2, 121, 139, .3) shows a transparent blue green.</p>
+    <h3>HSL and HSLA Values</h3>
+    <p>Like RGB and RGBA but use Hue (number), Saturation (percentage), Lightness (percentage) in place of red, green and blue. hsla(188, 97%, 28%, .3) gives the same color and transparence as the rgba(2, 121, 139, .3) value in the paragraph above.</p>
+    <h2>Images</h2>
+    <p>This value type is used wherever and image is a valid value, such as an image file, a URL pointing to a URL, or a gradient. Examples:
+    <ul style="list-style-type: none">
+        <li>.image {</li>
+            <ul style="list-style-type: none">
+            <li>background-image: url(star.png);</li>
+            </ul>
+        <li>}</li>
+    </ul>
+    <ul style="list-style-type: none">
+        <li>.gradient {</li>
+            <ul style="list-style-type: none">
+                <li>background-image: linear-gradient(90deg, rgba(119,0,255,1) 39%, rgba(0,212,255,1) 100%);</li>
+            </ul>
+        <li>}</li>
+    </ul>
+    <h2>Position</h2>
+    <p>The <span class="bold">&lt;position&gt; value type</span> represents a set of 2D coordinates that are used to position an item. The first sets the horizontal position, and the second sets the vertical position. If you only give one value, the other will default to "center."</p>
+    <p>For example: "background-position: right 40px;"" will set an image 40px from the top and to the right of the container.</p>
+    <h2>Strings and Identifiers</h2>
+    <p><span class="bold">Identifiers</span> are keywords that are not quoted because CSS recognizes them (e.g., color keywords like blue.</p>
+    <p>You can identify strings in CSS by using value types such as &lt;content&gt;. Strings must be quoted in the CSS.</p>
+    <h2>Functions</h2>
+    <p>A <span class="bold">function</span> is a section of reusable code that "can be run multiple times to complete a repetitive task with minimal effort." Examples include the "rgb()", "hsl()", "url()", and "calc()" functions. An example in CSS:</p>
+    <p>.box {width: calc(20% + 100px);}</p>
+    <h2>Testing My Skills</h2>
+    <h3>Task 1: &lt;color&gt;</h3>
+    <ul>
+        <li class="hex">hex color</li>
+        <li class="rgb">RGB color</li>
+        <li class="hsl">HSL color</li>
+        <li class="transparency">Alpha value .2</li>
+      </ul>
+         
+</body>
+</html>
