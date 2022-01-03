@@ -1,0 +1,55 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #cacaca;
+    display: flex;
+    /* height: 1440px; */
+    height: 600px; /* increasing the height is affected by align-content property in container selector */
+    padding:10px;
+    margin: 50px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-evenly;
+    flex-wrap: wrap; /*default is no-wrap, and items might overflow container. with wrap, items will flow to another line.*/
+    /* align-content: center; */
+}
+
+.item {
+    background-color: #ff0037;
+    color: #fff;
+    font-size: 35px;
+    padding: 20px;
+    margin: 10px;
+ /*the flex keyword by itself affects flex-grow, flex-shrink, and flex-basis as a baseline property */
+}
+
+.item-1 {
+/* align-self: space-evenly; */
+}
+
+.item-2 {
+/* align-self: flex-end; */
+}
+
+.item-3 {
+    /* align-self:stretch; */
+}
+
+.item-4 {
+    /* align-self: space-between; */
+}
+
+.item-5 {
+    /* flex-basis: 75%; occupying 75% of the container */
+    /* flex-basis: 700px; */
+    /* flex-shrink: 0; always 0 or 1, if 1 (default), a container will shrink at a certain break point; with 0, it will not shrink. */
+    /* align-self:baseline; */
+}
+
+.item-10 {
+    flex: 1;
+    /* align-self:center; */
+}
