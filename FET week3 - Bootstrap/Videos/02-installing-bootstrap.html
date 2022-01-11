@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing Bootstrap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Installing Bootstrap</h1>
+    <h2>What Is Bootstrap?</h2>
+    <p>Bootstrap is a well-known CSS framework/library that provides an in-depth starting point for many common CSS styles components. Useful for making something use really good, really quickly.</p>
+    <p>We can load Bootstrap with a CDN (content delivery network), which allows us to link the files over the internet or install them locally and use them in our projects. We'll do the latter.</p>
+    <h2>Installing Bootstrap</h2>
+    <p>From the CLI, go to your project root directory. Run "npm init," enter through everything to choose the default values. This will add a package.json file to your directory and make it an npm project.</p>
+    <p>Next, use npm to install different libraries. Then on the CLI, type "npm i bootstrap" or "npm install bootstrap." You will now notice a "node modules/bootstrap" directory in your project with several subdirectories.</p>
+    <p>We also need jquery, so run "npm i jquery" in the directory for the proejct.</p>
+    <h2>Test Out Bootstrap</h2>
+    <ol>
+    <li>Link to 
+        <pre>
+            <code>&lt;link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"&gt;</code>
+        </pre>in the head.</li>
+    <li>Try <pre>
+        <code>&lt;div class="alert alert-primary" role="alert"&gt; It Works!&lt;/div&gt;</code></pre></li>
+    <li>Link to jquery with
+        <pre>
+            <code>&lt;script src="node_modules/jquery/dist/jquery.js"&gt;&lt;/script&gt;</code> and <code>&lt;script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"&gt;&lt;/script&gt;</code></li>
+        </ol>    
+</body>
+</html>
