@@ -1,0 +1,15 @@
+{
+  "name": "jrteamapp",
+  "version": "1.0.0",
+  "description": "HTML/CSS/Bootstrap Application for Teams",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Janell Robisch",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0"
+  }
+}
