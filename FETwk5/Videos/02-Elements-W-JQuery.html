@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Interacting with elements using JQuery</title>
+	</head>
+	<input>
+		<h1>Interacting with elements using JQuery</h1>
+		<p id="test">
+			Hello, World!
+		</p>
+		<div class="my-class">Div</div>
+		<ul>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ul>
+
+		<p>
+			JQuery returns elements wrapped inside a JQuery object that has built-in
+			methods that allow us to easily interact with that part of the DOM.
+		</p>
+
+		<h2>JQuery Methods</h2>
+		<p>How to get and set text and values.
+		</p>
+
+		<input type="text"></input>
+		<p>JQuery uses a name with a $ symbol to interact with elements of the DOM.</p>
+
+		<p>We can also use JQuery to access and changed attributes of elements.</p>
+
+		<h2>Adding Elements to the DOM with JQuery with Methods</h2>
+		<ol>
+			<li><em>Append:</em> adds context to an existing element at the end of the element's current content</li> 
+			<li><em>Prepend:</em> adds context to an existing element at the beginning of the element's current content</li>
+			<li><em>Before:</em> Add elements and content immediately before the existing element</li>
+			<li><em>After:</em> Add elements and content immediately after the existing element</li>
+		</ol>
+	<h2>Removing Elements from the DOM with JQuery with Methods</h2>
+	<ol>
+		<li><em>Remove:</em> deletes the element and all its children from the DOM</li>
+		<li><em>Empty:</em> removes all the children of the selected element from the DOM</li>
+	</ol>
+
+	<h2>Hide and Show</h2>
+	<ol>
+		<li><em>Hide:</em> Hides an element from being displayed with removing it</li>
+		<li><em>Show:</em> Shows an element</li>
+	</ol>
+
+		<script src="../node_modules/jquery/dist/jquery.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
