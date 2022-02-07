@@ -1,0 +1,15 @@
+Notes.txt
+
+WEBPACK can help us import dependencies from specific files into other files. Bundles all of our resources together into a single resource file.
+
+REACT 
+
+CREATE REACT APP (comes with later versions of NodeJS) - generate boilerplate configuration when we start a react app
+    run "npx create-react-app test-app" in the terminal/cli
+
+
+Components
+React enables us to organize our code into logical constructs called components. Since React is all abt composing UIs, each component should represent a visual combination of HTML elements that can be reused - like custom HTML elements. React allows us to create UIs using a component-based architecture. (ex. social media page)
+
+JSX
+Easier way to create components. JSX = JavaScript HTML. Recommended way to create elements using React. Reduces verbosity of code over createElement method.

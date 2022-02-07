@@ -1,0 +1,122 @@
+January 27, 2022
+Jeff H. covering for Evan
+
+See cheat sheet www.oscarotero.com/jquery/
+
+
+Function with empty curly braces in jquery (on-ready wrapper - used to be .ready. '$(function () {})'
+$( function () {
+
+})
+
+Makes sure page is loaded before JQuery elements are accessed
+
+
+//syntax for calling elements in jquery
+1. $('div') - tag/elements - calls objects with the tag
+2. $('.shadow') - class - objects with the class 'shadow' (e.g., divs)
+3. $('#card1') - id - calls elements with id card1
+4. $(input[value='Sample']) - attribute - anything with the value 'Sample' stored in input
+
+A more complicated one
+$( 'div.card img') - child images in div with the class card - just grabs the image itself
+
+Some examples
+
+if (card1.hasClass('shadow)) {
+    console.log('has class - shadow)
+} else {
+    console.log("doesn't have class -shadow)
+}
+}
+
+card1.addClass("shadow nonExistentClass");
+
+Because JQuery's effect are instantaneous, it's good for animation, for example, by toggling class (toggle or toggleClass) - toggleClass is depracated but may still work
+
+Grab id buttonChange and toggle new class with click
+$('#buttonChange').on("click", function() {
+    card1.toggleClass("shadow");
+});
+//should toggle shadow on and off
+
+'on' is a good catchall for event listeners in Jquery (sample events: click, submit, load, blur, focus, custom event, keydown, mouseover, mouseout, etc.)
+
+JQuery is good for chaining events (probably limit to 2 or 3 to avoid weirdness)
+
+$('#buttonChange').on("click", function() {
+e.g., card1.toggleClass('shadow').removeClass('card');
+});
+
+$('#buttonChange').on("click", function() {
+e.g., card1.toggleClass('shadow').addClass('card');
+});
+
+(like foo box!)
+
+SOME INTERESTING ANIMATION EFFECTS
+.fadeIn, animate, etc.
+
+$('#buttonChange').on("click", function() {
+    card1.fadeOut("slow", () => console.log("fade out complete"))
+});
+
+or
+
+$("button").click(function(){
+  $("p").fadeOut();
+}); (w3schools)
+
+
+
+
+AJAX
+
+Allows us to get/post or update information without having to reload the whole web page.
+
+Ex: $.get("https://api.sampleapis.com/cofee/hot"); //returns data on coffee drinks (sampleapis.com)
+
+are elements to get just JSON/data
+
+$.get("https://api.sampleapis.com/cofee/hot", (data) => console.log(data)});
+
+
+Do something with the data
+inside ajax call:
+    $('#col1', add(h2).text(data[1].title)) //will return the data to the div with the id col1 in an h2
+
+
+Posting
+
+CrudCrud.com - api where you can post things 
+
+Example:
+
+.post(URL, function(data) => {
+    console.log(data)
+});
+
+from api.jquery.com
+
+$.ajax({
+  type: "POST",
+  url: url,
+  data: data,
+  success: success,
+  dataType: dataType
+});
+
+or
+
+$.post( "ajax/test.html", function( data ) {
+  $( ".result" ).html( data );
+});
+
+
+*What is mx-auto? bootrap?
+
+Use API that is used in the videos next week because CRUD is not working right?
+
+
+
+

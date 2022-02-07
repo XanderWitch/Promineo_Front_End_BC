@@ -1,0 +1,73 @@
+APIs
+
+HTTP - web 1.0, a communication protocol, client-server protocol
+
+AKA Request-Response protocol (a protocol is a way of/rules for communicating between two things)
+
+Two things happen
+1. Client makes HTTP request - front end has to ask, server can't (client could be browser, mobile app, etc.)
+
+
+Protocol defines the way we make the requests
+
+API - application-program interface
+
+    Interface - a way that two things/computer programs connect to each other.
+    e.g., interface w/DOM APIs, operating system APIs, etc.
+
+    In general, however, API is typically an HTTP API (request-response), a way something can talk to a backend server, and the server exposes its information so the front-end can use a predefined number of ways to interact and receive data from the server. A server can serve data but can also do other things.
+
+    Powerful form of abstraction
+
+
+HTTP - 1. request, 2. response
+
+PARTS OF A Request
+1. Client makes a response. Fetch() - built-in JS function - 
+
+    Path  https://www.api.com/users/4
+           ^protocol  ^host   ^resource
+
+    Methods
+    POST GET PUT DELETE
+
+    Headers
+    Metadata about the request
+    Ex  - authentication information
+        - more detail about request (eg format of body)
+
+    Body (some request) - some information you include with request, typically in JSON (95%)
+
+
+2. Server responds with
+
+Code
+100 - not used much
+200 - success 
+300 - redirect
+400 - error (client error - 400 bad request, 404 not found, 403 forbidden or unauthorized, 402 payment required)
+500 - error (server error)
+
+Server response may have a body with data
+
+Endpoint - one part of the API - where you're going. Best APIs have good documentation listing these and how to use them and what is possible.
+
+REST 
+RESTful/REST APIs - REST is a design pattern or architectural style for HTTP data APIs (Representational Stte Transfer, set of rules of how to set up an HTTP API that serves data)
+
+Statelessness
+(for REST APIs) - server has no memory; can receive requests and responds to them, but cannot 'remember them'. As a result, you must provide your authentication data, etc. Each request is in a vacuum. Makes thing cleaner and easier on the back end.
+
+In Rest - path refers to a resource (a noun) and method is what you do to it (a verb) - can do multiple things to one URL
+
+
+Request for a specific resource:
+
+("https://localhost:3000/posts/3"<-- one part of the array, the id or path parameter) - good for an update request, for example, or getting exactly one record
+
+Query parameter is good for filtering
+e.g., https://localhost:3000/posts/?key=value&key2=value2 <--typically a get request (e.g. search)
+                                    ^query parameter, start with question mark
+
+                                    https://localhost:3000/posts/?author=evan2&title=foo
+
