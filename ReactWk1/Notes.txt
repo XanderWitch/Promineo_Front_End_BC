@@ -13,3 +13,13 @@ React enables us to organize our code into logical constructs called components.
 
 JSX
 Easier way to create components. JSX = JavaScript HTML. Recommended way to create elements using React. Reduces verbosity of code over createElement method.
+
+Install Flow from New Directory
+1. npm init
+2. npm i react -D (--save -dev)
+3. npm i react-dom -D
+4. npm i weback -D
+5. npm i webpack-cli -D
+
+Create React APP avoid above
+1. Run "npx create-react-app test-app" from parent Directory
