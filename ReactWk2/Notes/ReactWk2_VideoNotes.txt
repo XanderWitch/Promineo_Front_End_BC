@@ -1,0 +1,95 @@
+VID 1 - PROPS (first four vids = 'test-app')
+
+Used to pass parameters into components.
+
+How to Declare Them -
+1. Inside the component (e.g., <Comment content="Hello!" />).
+2. As an object (e.g., <Comment {...commentOne} /> and
+                <div className="card-header bg-success text-white">
+                    {/* adding props from object in post.js */}
+                    {this.props.username} {this.props.date}
+                </div>).
+
+
+VID 2 - STATE
+Data changes, depending on interactions with the user, and describes what and how thing should be displayed and is usually the crucial driver behind the purpose of an application. STATE represents the current state of the data the application is currently displaying, and in React, this state is called 'state.' It plays an important role in dynamics.
+
+Setup state
+Create a super constructor and pass in the props. Add the props to the state to show what data are components should be displaying.
+
+
+VID 3 - Updating state
+
+'Set State' Method inside the Render method (can also set it elsewhere - covered later)
+
+this.setState - invoke It
+
+Pass in an object.
+this.setState({content: 'state updated});
+
+Add a set timeout method to avoid exceptions/infinite loop
+setTimeout(() => this.setState({content: 'state updated'}), 2000); //2000 = 2 sec
+
+//only updates set values
+
+setState method takes an object as its first parameter and a second parameter optionally - a callback
+
+
+React can update the state at the most optimized moment
+When callback (a function) is invoked, this will show the most recently updated state.
+
+let tempComments = this.state.comments;
+setTimeout(() => this.setState({content: 'state updated', comments: []}, () => setTimeout(() => this.setState({comments: tempComments}), 2000)), 2000);
+
+Render is called each time we call the setState method.
+
+Don't use this.state or this.props directly in the updated values of the state because of asynchronous updating.
+
+Instead, an overloaded version of the setState method can accept a fx that takes the previous state as the first parameter and the new props at the time as a second parameter. Then return the value of the new state object.
+
+Not:
+    this.setState({count: this.state.count + 1})
+
+Instead:
+    this.setState(x => ({count: x.count + 1}), () => console.log(this.state.count))
+    
+    //where x represents the most current, updated state
+
+    with timeout:
+
+            setTimeout(() => this.setState(x => ({count: x.count + 1}), () => console.log(this.state.count)), 2000);
+
+            if we use a second parameter, the first would be state and the second would be props
+
+            setTimeout((state, props) => this.setState(x => ({count: props.count + 1}), () => console.log(this.state.count)), 2000);
+
+
+VID 4 - UNIQUE KEY PROP
+
+Adding keys (e.g., a unique id from a database or an index from an array) to each element to help react distinguish what has been changed, updated, or deleted.
+
+    e.g.,
+            let comments;
+        if (this.state.comments) {
+            comments = this.state.comments.map((comment, index) => <Comment key={index} {...comment} />);
+            //map method will take each comment inside this.state.comments, create a JSX element/component with comment and index as the props and push them to the array.
+        }
+
+
+VIDS - EVENTS (see 'events-test')
+
+Users interact with data and take actions that trigger events.
+Need to trigger and handle events in React.
+
+1. Put a fx directly in the onclick attribute of a JSX button. Example: Three buttons, each with its own counter that increase with each click (separately on each button).
+
+2. In React, state flows down from parent to child in a unidirectional data flow. We can take advantage of this by storing the state of the counter buttons in the parent container, if the count needs to go up anytime any one of the buttons is clicked. Called 'Raising the State.'
+
+VID - INTRO TO LIFECYCLE METHODS
+
+Each class that extends React.Component comes with some inherent methods called LIFECYCLE methods. We can override them to run code at a specific times during a component's lifecycle.
+
+There are three main lifecycles: 
+    1. Mounting - when a component is being created and inserted into the DOM (constructor method then render method, typically JSX)
+    2. Updating - render method used again
+    3. Unmounting - contains componentWillUnmount - cleanup anything to prevent memory leaks
