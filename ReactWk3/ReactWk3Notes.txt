@@ -1,0 +1,80 @@
+Video 1 - REST
+
+REST - Representational State Transfer
+The way we should use HTTP to create web services and applications. Focuses on transferring the state of a resource (a noun/entity) from one application/machine to another.
+
+JSON - JavaScript Object Notation
+Preferred way to transfer the state of a resource. Typically conveyed in key-value pairs.
+
+e.g. bank account resource
+
+This (below) represents the state of an account resource at a given time.
+
+{
+    accountNumber: "09986345",
+    balance: 670.34,
+    accountType: "checking"
+}
+
+The state can be transferred from the front end to the back end, etc.
+
+
+Video 2 - HTTP Methods to perform CRUD operations on REST resources
+
+CRUD - Create/Read/Update/Delete - use HTTP verb methods Post/Get/Update/Delete
+
+HTTP (POST) Request ---> Resource created (computer to server, payload)
+HTTP (GET) Request ---> Read a resource or group of resources (no payload)
+HTTP (UPDATE) Request ---> Update a Resource (payload)
+HTTP (DELETE) Request ---> Delete a Resource (doesn't typically include a payload)
+
+Payload - a text, typically JSON, that describes what we want the request to do and further information
+
+<---HTTP Response
+
+
+Video 3 - HTTP Requests with Fetch
+
+Fetch lets us send an HTTP request and returns a promise that we can then handle (built into JS).
+
+Can take 1 or 2 parameters: 1. URL, 2. Object used to give further details.
+
+const ENDPOINT = 'https://ancient-taiga-31359.herokuapp.com/api/houses';
+
+
+fetch(ENDPOINT);  /*get request */
+
+fetch(ENDPOINT, { /*post request */
+method: 'POST',
+headers:  {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+  name: 'Fetch House'
+  }) 
+  });
+
+
+ fetch(`${ENDPOINT}/62156059e7086e00172521aa`,  {
+    method :'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+ });; 
+
+*doublecheck syntax for delete and put
+
+//handling the data/error that comes back, dealing with the promise
+fetch(ENDPOINT)
+    .then(res =>res.json())
+    .then(res => {
+        res.forEach(house => document.write(house.name))
+    });
+
+
+
+Video 4 - Request CRUD Tutorial
+
+In React, if we use class based components, we should put them in the componentDidMount lifecycle
+
+
