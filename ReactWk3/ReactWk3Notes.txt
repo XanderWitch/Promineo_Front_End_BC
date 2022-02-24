@@ -77,4 +77,135 @@ Video 4 - Request CRUD Tutorial
 
 In React, if we use class based components, we should put them in the componentDidMount lifecycle
 
+Video - Functional components
+
+Functional components for components that don't need state *Is this still true?
+Use class for state
+
+Can add props into functional component like this:
+
+const Person = (props) => {
+	//destructure props
+	const { name, age } = props;
+	return (
+		<div>
+			<h1>{name}</h1>
+			<h2>Age: {age}</h2>
+		</div>
+	);
+};
+
+Pass in the props when the component is called like this:
+
+function App() {
+	return (
+		<div className='App'>
+			<Person name='Janell' age='49' />
+			<Person name='Alan' age='50' />
+		</div>
+	);
+}
+
+Spread operator (...) allows us to take an iterable object (e.g., object literal, array, function parameters) and spread it out over anything that takes multiple values.
+
+Example:
+
+    function doSomething (a, b, c) {
+        console.log(a, b, c);   
+    }
+
+Normal function call
+    doSomething(1, 2, 3);
+
+
+let array = [5, 6, 7];
+
+Normal function call for array
+    doSomething(array); <-- Will only count 'array' as one of the parameters/values
+
+Using spread operator
+    doSomething(...array); <-- Takes all three values (5, 6, 7) just like doSomething(5, 6, 7)
+
+Works with objects too
+
+Let obj1={
+    name: '01"
+    value1: 1,
+    value2: 2
+}
+
+let clone = {...obj1} <--will take all properties from obj1 and create a new object with it
+
+Can also use the spread operator to take all the properties but also update some of the properties like this:
+    let clone = {...obj1, name: '02'}
+
+
+Video - Destructuring
+Destructuring allows us to take an array or an object and break their values apart into distinct variables. Used for imports a lot.
+
+Example:
+let array = [3, 5, 7, 9];
+let object = {
+    propertyOne: 'p-one',
+    propertyTwo: 'p-two,
+    propertyThree: 'p-three'
+}
+
+Destructured:
+
+ARRAY
+let [a, b, c ] = array;
+
+console.log(a) --> 3
+console.log(b) --> 5
+console.log(b) --> 7
+
+OBJECTS (must use the names from the original object)
+
+let {propertyOne, propertyThree} = object;
+
+console.log(propertyThree) --> 'p-three'
+
+IN REACT Example
+import {Component} from 'react';
+or
+import React, {Component} from 'react';
+
+
+Video - HOOKS
+Used to access state or a lifecycle method inside a functional component
+Hooks allow us to use state and other features without having to write a class.
+
+STATE HOOK - allows us to use state inside a functional component
+Example - see code (router-practice, APP component).
+
+EFFECT HOOK - http requests instead of in ComponentDidMount method
+use effect function, function will be executed after every render of the component, including the very first rendering
+--use effect takes another funciton as an argument
+
+
+Video - ASYNC AWAIT
+
+//USING PROMISES
+const HOUSES_ENDPOINT = 'https://ancient-taiga-31359.herokuapp.com/api/houses';
+
+const getHouses = () => {
+    fetch(HOUSES_ENDPOINT)
+        .then(response => response.json())
+        .then(response => console.log(response));
+}
+
+getHouses()
+
+//ASYNC AWAIT INSTEAD - any await call has to be inside of an async function
+
+const HOUSES_ENDPOINT = 'https://ancient-taiga-31359.herokuapp.com/api/houses';
+
+const getHouses = async  () => {
+    const response = await fetch(HOUSES_ENDPOINT); //<--returns response
+    const json = await response.json();// <--returns body from response
+    console.log(json);
+}
+getHouses();
+
 
