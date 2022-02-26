@@ -1,0 +1,44 @@
+React Week 3
+
+Evan will cover design patterns for data fetching.
+
+Evan says use react dev tools in Chrome. Remember to do that.
+
+In Network tab, you can copy stuff out as Fetch or something else.
+
+A function with JSX should be converted to a component.
+
+EFFECT HOOKS - Evan will send article to help understand Effect Hooks and what their point is.
+    Application that allows you to search for articles posted to technology forum hackernews and displays links to the articles.
+
+AXIOS - library that makes fetching nicer (import axios from 'axios')
+ e.g.  <--put inside effect hook
+
+    useEffect(() => {
+        fetchData = async () => {
+        const result = await axios ('https://....);
+        setData(result.data); 
+ }
+    fetchData();
+
+        fetchData(); 
+    }), []) <--Do something else besides lifecycle methods, tells effects to happen when certain other things change, e.g, when things in the dependencey array changes, empty array means nothing will , whatever you put in there will be what it looks at to make changes e.g., query/search 
+
+controlled input - has a value and an onChange
+
+MAP thing - student object starts off as nothing trying to see the subvalue before value is setData
+
+Solutions -
+1. when you initialize state, try to make initial state as close as possible to what the state will actually be
+    e.g., const[student, setStudent] = useState({courses: []});
+2. conditional render {student && student.course.map}...
+3. optional chaining operator (?) --> can make the entire expression undefined instead of erroring, but it may not show on the DOM. Best for deeply nested objects.
+
+might not do it if you set initial state to array
+
+Article covers error handling - professional coding :)
+
+Big Idea behind hooks that he wants us to know - tightly coupled component - it's got display logic and data logic (query, loading, error) together. Class components don't allow this as much. Hooks give you a way to extract logic or other parts and use it in other part of app.  (e.g. data, isloading, isError, etc. are pulled in with custom hook instead of being built into the data component). Better to be loosely coupled.
+
+Custom hook - start with the word 'use'
+
