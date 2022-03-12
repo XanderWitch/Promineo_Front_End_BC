@@ -1,0 +1,77 @@
+Higher Order Function:
+--JavaScript Concept
+--Regular Function that takes one or more functions as parameter OR returns a function
+
+Built-In JS Higher Order Functions (need to pass in another function as an argument)
+--Array.forEach()
+--Array.map()
+--Array.filter()
+--Array.reduce()
+
+
+Higher Order Component
+--React Concept
+--Regular Function (Component) - BOTH of the following:
+    --takes component as a parameter
+    --returns a brand new component
+--Does not mutate
+--Enhances components with functions or data
+--Gives reusability
+
+Standard in React to name higher order component with the word "with" followed by whatever the component does (e.g., "withRedBorder.js")
+
+Use Cases of HOCs
+
+--React-Redux  
+    -connect()
+
+--React-Router
+    -withRouter()
+
+
+Redux
+
+What's it do?
+Usually the state of a component used in multiple places should reside in the common ancestor of the routes. "Lifting the State" (e.g., App), but in this case whenever the parent gets updated, every component under it will be updated.
+
+Redux manages the state at a central location, where every component can access it whenever they need it, all the way down. It is a State Management Tool.
+
+--State Managment Tool
+--JavaScript Library
+--Mostly used with React applications but can be used with any JS app
+--Use it whenever there are
+    -many components AND
+    -shared data between sibling components
+
+Other state management tools: Vuex (for VueJX), MobX, Immer
+
+Use it cautiously because it can cause problems that are hard to debug.
+
+3 REDUX PRINCIPLES
+1. Store
+2. Actions 
+3. Reducers
+
+Store
+1. Single, centralized location for application State
+2. One Store per app
+3. Centralized container
+4. Read-Only (can be modified only through Actions)
+
+Actions
+1. Modify the Store
+2. Simple JavaScript Objects
+
+Reducers
+1. Pure Function
+2. Takes current state as input
+3. Returns new/updated state.
+4. State updated based on Actions
+5. Typically a single reducer per app
+
+Flow
+1. Component dispatches an action.
+2. Action handled by Reducer.
+3. Reducer Updates the Store.
+4. Store Informs the Component with the new, updated state.
+5. Back to #1.

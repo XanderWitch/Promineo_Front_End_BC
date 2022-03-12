@@ -1,0 +1,57 @@
+Look up redux devtools chrome extension
+Redux good for playing state changes forward and backward, organizes mutations to state, tradeoff - lot of extra complexity
+
+Prop types - a way for enforcing types in components 
+
+Example: 
+react.js/org/docs/typechecking-with-prototypes.html
+
+Greeting.propTypes = {
+    name: PropTypes.string
+}
+
+//react will give an error if the wrong type is entered - this is a built-in feature of React
+
+*Learn Typescript - recommendation
+
+HOCs, hooks may be the same way to do the same thing
+reactjs.org/docs/higher-order-components.html
+
+Github page of public apis
+github.com/public-apis ... can look for ones with no API key
+
+Postman to test API stuff - can play around with request parameters to see what you get
+
+URL parameterization
+https://mysite.com/api -host
+
+get
+/users
+
+get
+/users? - query parameter
+/users?name=Evan&favorite_color=red - for filtering and search
+
+GET - path parameters
+/users/{id} e.g. /users/1234
+
+
+JOB ADVICE
+*find a way to collaborate on projects and network a lot
+*cold messaging on LinkedIn - reach out directly and start a conversation (or Twitter), find a set of company you like and seek out person on there instead of applying
+- direct with recruiter, more indirect with manager or dev, be earnest/authentic
+
+weworkremotely.com
+
+Consider jobs that make use of programming skills that are not developer roles, like tech adjacent roles
+
+Good tech - 
+
+Fullstack - Java and React
+
+Learn deployment (heroku is simpler that AWS)
+
+package-json - scripts section for how to deploy react app - build - npm build - and then copy build files
+link github and project URL and then should link to each other - at the top of resume at the top of portfolio. ReadME should be clear with instructions on how to download and run project.
+
+(update GIT)
